@@ -1,4 +1,4 @@
-public class ChocolateShop {
+public class OldChocolateShop {
 
     public Integer run(Integer pocketCash, Integer chocolatePrice, Integer numberOfWrappersRequired) {
         if (chocolatePrice == 0 || (numberOfWrappersRequired == 0 && pocketCash > 0)) {
