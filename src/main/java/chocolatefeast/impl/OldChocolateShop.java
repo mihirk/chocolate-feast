@@ -1,6 +1,16 @@
+package chocolatefeast.impl;
+
 public class OldChocolateShop {
 
-    public Integer run(Integer pocketCash, Integer chocolatePrice, Integer numberOfWrappersRequired) {
+    private final Integer chocolatePrice;
+    private final Integer numberOfWrappersRequired;
+
+    public OldChocolateShop(Integer chocolatePrice, Integer numberOfWrappersRequired) {
+        this.chocolatePrice = chocolatePrice;
+        this.numberOfWrappersRequired = numberOfWrappersRequired;
+    }
+
+    public Integer run(Integer pocketCash) {
         if (chocolatePrice == 0 || (numberOfWrappersRequired == 0 && pocketCash > 0)) {
             return Integer.MAX_VALUE;
         }
@@ -26,5 +36,4 @@ public class OldChocolateShop {
     private Double roundUpCash(Integer pocketCash, Integer chocolatePrice) {
         return (double) (pocketCash / chocolatePrice * chocolatePrice);
     }
-
 }

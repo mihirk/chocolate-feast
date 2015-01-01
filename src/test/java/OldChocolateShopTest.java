@@ -1,3 +1,5 @@
+import chocolatefeast.ChocolateShop;
+import chocolatefeast.impl.ChocolateShopImpl;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -5,11 +7,11 @@ import static junit.framework.TestCase.assertEquals;
 
 public class OldChocolateShopTest {
 
-    private OldChocolateShop oldChocolateShop;
+    private ChocolateShop oldChocolateShop;
 
     @Before
     public void setUp() throws Exception {
-        oldChocolateShop = new OldChocolateShop();
+        oldChocolateShop = new ChocolateShopImpl(0, 0);
 
     }
 

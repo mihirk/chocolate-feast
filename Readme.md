@@ -16,7 +16,7 @@ Instructions
  - Please submit your code as a zip file.
  - Add as many specs as you need, though they are completely optional. Any specs you do add should be in the "spec" folder
 and run successfully by running the default `rake spec` task.
- - Do not change the signature of the ChocolateShop.new or ChocolateShop.run methods. Besides that, you can
+ - Do not change the signature of the chocolatefeast.ChocolateShop.new or chocolatefeast.ChocolateShop.run methods. Besides that, you can
  add as much code as you like through the test.
  - You can leave the old_chocolate_shop.rb. No need to touch that or the old_acceptance_test.rb. The spec should be passing.
 Those are just there for demonstration purposes and so that you can make sure `rake spec` and everything is working.
