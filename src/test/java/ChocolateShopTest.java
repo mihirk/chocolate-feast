@@ -37,6 +37,7 @@ public class ChocolateShopTest {
         assertEquals(Integer.MAX_VALUE, numberOfChocolates.intValue());
     }
 
+    //Test dataset downloaded from hacker earth, and some regex find and replace to generate these assertions
     @Test
     public void shouldReturnTheNumberOfChocolates() throws Exception {
         assertEquals(6, chocolateShop.run(10, 2, 5).intValue());
