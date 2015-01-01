@@ -15,7 +15,30 @@ public class ChocolateShopTest {
 
     @Test
     public void shouldReturnZeroIfCashInPocketIsZero() throws Exception {
-        Integer numberOfChocolates = chocolateShop.run(0, 0, 0);
-        assertEquals((Integer) 0, numberOfChocolates);
+        Integer numberOfChocolates = chocolateShop.run(0, 1, 0);
+        assertEquals(0, numberOfChocolates.intValue());
+    }
+
+    @Test
+    public void shouldReturnInfinityIfChocolateIsForFree() throws Exception {
+        Integer numberOfChocolates = chocolateShop.run(1, 0, 0);
+        assertEquals(Integer.MAX_VALUE, numberOfChocolates.intValue());
+    }
+
+    @Test
+    public void shouldReturnInfinityIfWrappersNeededIsZero() throws Exception {
+        Integer numberOfChocolates = chocolateShop.run(1, 1, 0);
+        assertEquals(Integer.MAX_VALUE, numberOfChocolates.intValue());
+    }
+
+    @Test
+    public void shouldReturnTheInitialNumberOfChocolatesIfWrappersRequiredIsInfinity() throws Exception {
+        Integer numberOfChocolates = chocolateShop.run(1, 0, Integer.MAX_VALUE);
+        assertEquals(Integer.MAX_VALUE, numberOfChocolates.intValue());
+    }
+
+    @Test
+    public void shouldReturnTheNumberOfChocolates() throws Exception {
+
     }
 }
