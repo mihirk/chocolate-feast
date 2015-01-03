@@ -1,13 +1,19 @@
 import chocolatefeast.ChocolateShop;
+import chocolatefeast.InvalidInput;
 import chocolatefeast.impl.ChocolateShopImpl;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static junit.framework.TestCase.assertEquals;
 
 public class OldChocolateShopTest {
 
     private ChocolateShop oldChocolateShop;
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Before
     public void setUp() throws Exception {
@@ -17,26 +23,26 @@ public class OldChocolateShopTest {
 
     @Test
     public void shouldReturnZeroIfCashInPocketIsZero() throws Exception {
-        Integer numberOfChocolates = oldChocolateShop.run(0, 1, 0);
+        Integer numberOfChocolates = oldChocolateShop.run(0, 1, 1);
         assertEquals(0, numberOfChocolates.intValue());
     }
 
     @Test
-    public void shouldReturnInfinityIfChocolateIsForFree() throws Exception {
+    public void shouldThrowInfinityExceptionIfChocolateIsForFree() throws Exception {
+        thrown.expect(InvalidInput.class);
         Integer numberOfChocolates = oldChocolateShop.run(1, 0, 0);
-        assertEquals(Integer.MAX_VALUE, numberOfChocolates.intValue());
     }
 
     @Test
-    public void shouldReturnInfinityIfWrappersNeededIsZero() throws Exception {
+    public void shouldThrowInfinityExceptionIfWrappersNeededIsZero() throws Exception {
+        thrown.expect(InvalidInput.class);
         Integer numberOfChocolates = oldChocolateShop.run(1, 1, 0);
-        assertEquals(Integer.MAX_VALUE, numberOfChocolates.intValue());
     }
 
     @Test
     public void shouldReturnTheInitialNumberOfChocolatesIfWrappersRequiredIsInfinity() throws Exception {
+        thrown.expect(InvalidInput.class);
         Integer numberOfChocolates = oldChocolateShop.run(1, 0, Integer.MAX_VALUE);
-        assertEquals(Integer.MAX_VALUE, numberOfChocolates.intValue());
     }
 
     //Test dataset downloaded from hacker earth, and some regex find and replace to generate these assertions

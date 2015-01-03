@@ -1,25 +1,39 @@
 package chocolatefeast.model;
 
+import chocolatefeast.factory.ChocolateFactory;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class ChocolateTransaction {
-    private HashMap<ChocolateType, List<Chocolate>> chocolates;
+    private List<Chocolate> chocolates;
+    private Integer pocketCash;
 
     public ChocolateTransaction() {
-        chocolates = new HashMap<ChocolateType, List<Chocolate>>();
+        chocolates = new ArrayList<Chocolate>();
     }
 
-    public HashMap<ChocolateType, List<Chocolate>> getChocolates() {
+    public void setPocketCash(Integer pocketCash) {
+        this.pocketCash = pocketCash;
+    }
+
+    public List<Chocolate> getChocolates() {
         return chocolates;
     }
 
-    public void addChocolates(Integer chocolateCount, ChocolateType chocolateType, ChocolateState chocolateState) {
-        List<Chocolate> chocolates = new ArrayList<Chocolate>();
-        for (int i = 0; i < chocolateCount; i++) {
-            chocolates.add(new Chocolate(chocolateType, chocolateState));
-        }
-        this.chocolates.put(chocolateType, chocolates);
+    public void addChocolates(List<Chocolate> chocolates) {
+        this.chocolates.addAll(chocolates);
+    }
+
+    public void addChocolates(Integer countOfChocolates) {
+        this.chocolates.addAll(ChocolateFactory.getChocolates(countOfChocolates));
+    }
+
+    public Integer getPocketCash() {
+        return pocketCash;
+    }
+
+    public void setChocolates(List<Chocolate> chocolates) {
+        this.chocolates = chocolates;
     }
 }

@@ -14,6 +14,10 @@ public class Chocolate {
         this.chocolateState = chocolateState;
     }
 
+    public Chocolate() {
+
+    }
+
     public ChocolateState getChocolateState() {
         return chocolateState;
     }
