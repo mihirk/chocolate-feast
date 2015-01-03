@@ -44,3 +44,7 @@ Would recommend opening the project in an IDE and running it from there.
 Two external libraries are used
 Junit a unit testing framework
 Json for converting json string to java objects and reverse.
+
+## Running all the tests
+mvn clean test
+All tests are passing on my machine, I would have setup a PaAS CI, but since we can't push to github, wasn't able to.
