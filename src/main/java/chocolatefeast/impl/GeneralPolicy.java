@@ -2,6 +2,7 @@ package chocolatefeast.impl;
 
 import chocolatefeast.InvalidInput;
 import chocolatefeast.Policy;
+import chocolatefeast.factory.ChocolateFactory;
 import chocolatefeast.model.ChocolateTransaction;
 
 public class GeneralPolicy implements Policy {
@@ -20,6 +21,6 @@ public class GeneralPolicy implements Policy {
             throw new InvalidInput("Infinite Output");
         }
         Integer numberOfChocolates = pocketCash / chocolatePrice;
-        chocolateTransaction.addChocolates(numberOfChocolates);
+        chocolateTransaction.setChocolates(ChocolateFactory.getChocolates(numberOfChocolates, chocolatePrice));
     }
 }

@@ -8,19 +8,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChocolateFactory {
+
     public static List<Chocolate> getChocolates(Integer count, ChocolateType chocolateType, ChocolateState chocolateState) {
         List<Chocolate> chocolates = new ArrayList<Chocolate>();
+        if (chocolateType == null) return chocolates;
         for (int i = 0; i < count; i++) {
-            chocolates.add(new Chocolate(chocolateType, chocolateState));
+
+            chocolates.add(new Chocolate(chocolateType, chocolateState, 0));
+        }
+        return chocolates;
+    }
+
+    public static List<Chocolate> getChocolates(Integer count, Integer chocolatePrice) {
+        List<Chocolate> chocolates = new ArrayList<Chocolate>();
+        for (int i = 0; i < count; i++) {
+            chocolates.add(new Chocolate(ChocolateState.WRAPPED, chocolatePrice));
         }
         return chocolates;
     }
 
     public static List<Chocolate> getChocolates(Integer count) {
-        List<Chocolate> chocolates = new ArrayList<Chocolate>();
-        for (int i = 0; i < count; i++) {
-            chocolates.add(new Chocolate());
-        }
-        return chocolates;
+        return getChocolates(count, 0);
     }
+
 }

@@ -1,7 +1,5 @@
 package chocolatefeast.model;
 
-import chocolatefeast.factory.ChocolateFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,9 +23,6 @@ public class ChocolateTransaction {
         this.chocolates.addAll(chocolates);
     }
 
-    public void addChocolates(Integer countOfChocolates) {
-        this.chocolates.addAll(ChocolateFactory.getChocolates(countOfChocolates));
-    }
 
     public Integer getPocketCash() {
         return pocketCash;
@@ -35,5 +30,21 @@ public class ChocolateTransaction {
 
     public void setChocolates(List<Chocolate> chocolates) {
         this.chocolates = chocolates;
+    }
+
+    public void assignChocolateType(ChocolateType chocolateType) {
+        for (Chocolate chocolate : chocolates) {
+            chocolate.setChocolateType(chocolateType);
+        }
+    }
+
+    public List<Chocolate> getFreeChocolates() {
+        List<Chocolate> freeChocolates = new ArrayList<Chocolate>();
+        for (Chocolate chocolate : chocolates) {
+            if (chocolate.isFree()) {
+                freeChocolates.add(chocolate);
+            }
+        }
+        return freeChocolates;
     }
 }
