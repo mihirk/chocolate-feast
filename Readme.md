@@ -39,3 +39,8 @@ This is to expose user input for the code.
 You would need JDK 1.7 + installed and maven on the machine.
 You can execute the run.sh script to get the final user interface.
 Would recommend opening the project in an IDE and running it from there.
+
+## External Libraries
+Two external libraries are used
+Junit a unit testing framework
+Json for converting json string to java objects and reverse.
