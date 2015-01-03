@@ -2,8 +2,9 @@ import chocolateshop.impl.ChocolateShopImpl;
 import chocolateshop.model.Chocolate;
 import chocolateshop.model.ChocolateState;
 import chocolateshop.model.ChocolateType;
-import model.Brother;
-import model.Sister;
+import goodbrother.ChocolateShopVisit;
+import goodbrother.model.Brother;
+import goodbrother.model.Sister;
 import org.junit.Test;
 
 import java.util.Arrays;

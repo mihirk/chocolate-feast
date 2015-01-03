@@ -1,8 +1,10 @@
+package goodbrother;
+
 import chocolateshop.ChocolateShop;
 import chocolateshop.InvalidInput;
 import chocolateshop.model.Chocolate;
-import model.Brother;
-import model.Sister;
+import goodbrother.model.Brother;
+import goodbrother.model.Sister;
 
 import java.util.ArrayList;
 import java.util.List;

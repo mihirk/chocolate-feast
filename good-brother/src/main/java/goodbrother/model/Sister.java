@@ -1,4 +1,4 @@
-package model;
+package goodbrother.model;
 
 import chocolateshop.model.ChocolateType;
 
